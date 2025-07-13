@@ -74,4 +74,26 @@ def navigation_web():
         else:
             print("Inicio.")
 
-navigation_web() 
+#navigation_web() 
+
+def shared_printed():
+
+    queue = []
+
+    while True:
+        action = input("añade un documento o selecciona las opciones 'imprimir' o 'salir': ")
+
+        if action == "salir":
+            print("Has terminado con las impresiones.")
+            break
+        elif action == "imprimir":
+            if len(queue) > 0:
+                print(f"imprimiendo documento: {queue.pop(0)}.pdf")
+            else:
+                print("No hay documentos disponibles para imprimir.")
+        else:
+            queue.append(action)
+
+        print(f"Documentos en espera: {queue}")
+
+shared_printed()
